@@ -34,6 +34,8 @@ body{
     resize: none;
 }
 
+/* Category & due date */
+
 .flex-container{
     height: 100px;
     display: flex;
@@ -91,4 +93,41 @@ body{
     border: none;
     color: white;
     font-size: 18px;
+}
+
+/* your tasks */
+#your-tasks{
+    color: green;
+}
+
+/* list items */
+
+.list-container{
+    width: 100%;
+   
+}
+
+.list-container ul{
+    padding: 0px;
+    list-style: none;
+}
+
+.list-item-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    align-items: baseline;
+    border-bottom: 1px solid gray;
+}
+
+.list-item-left{
+    display: flex;
+    align-items: baseline;
+}
+
+.list-item-right{
+    padding: 0px 10px;
+    background-color:royalblue;
+    color: aliceblue;
+    border-radius: 15%;
 }

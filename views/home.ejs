@@ -10,49 +10,79 @@
     
 </head>
 <body>
-    <h1 id="heading">Todo App</h1>
+    <h1 id="heading"> Todo App</h1>
     <hr>
-    <div class="discription-container">
-        <h5 class="upper-case">Discription</h5>
-        <textarea name="discription" id="discription-textarea" placeholder="what do you need to do?"></textarea>
-    </div>
-    <hr>
-
-    <div class="flex-container">
-        <div class="div-left">
-            <label for="category">CATEGORY</label> <br>
-            <div class="dropdown-container">
-                <!-- dropdown menu -->
-                <select name="category" id="dropdown-category">
-                    <option value="">Select category</option>
-                    <option value="personal">Personal</option>
-                    <option value="work">Work</option>
-                    <option value="school">School</option>
-                    <option value="cleaning">Cleaning</option>
-                    <option value="other">Other</option>
-                </select>
+    <form action="/todo-_list" method="post">
+        <div class="discription-container">
+            <h5 class="upper-case">Discription</h5>
+            <textarea name="discription" id="discription-textarea" placeholder="what do you need to do?"></textarea>
+        </div>
+        <hr>
+    
+        <div class="flex-container">
+            <div class="div-left">
+                <label for="category">CATEGORY</label> <br>
+                <div class="dropdown-container">
+                    <!-- dropdown menu -->
+                    <select name="category" id="dropdown-category">
+                        <option value="">Select category</option>
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="div-right">
+                <label for="due_date">DUE DATE</label> <br>
+                <input type="date" id="due_date" name="due_date">
             </div>
         </div>
-        <div class="div-right">
-            <label for="due_date">DUE DATE</label> <br>
-            <input type="date" id="due_date" name="due_date">
-        </div>
-    </div>
-    <hr>
-
-    <div class="button-container">
-        <!-- add button -->
-        <button id="add-btn">
-            <i class="fas fa-plus"></i>  &nbsp; &nbsp; ADD TASK
-        </button>
-        <!-- delete button -->
-        <button id="delete-btn">
-            <i class="fas fa-trash-alt"></i>  &nbsp; &nbsp; DELETE TASK
-        </button>
-    </div>
-    <hr>
-
+        <hr>
     
+        <div class="button-container">
+            <!-- add button -->
+            <button id="add-btn">
+                <i class="fas fa-plus"></i>  &nbsp; &nbsp; ADD TASK
+            </button>
+            <!-- delete button -->
+            <button id="delete-btn">
+                <i class="fas fa-trash-alt"></i>  &nbsp; &nbsp; DELETE TASK
+            </button>
+        </div>
+    </form>
+    <hr>
+    <div>
+        <h2 id="your-tasks">YOUR TASKS</h2>
+    </div>
+    <hr>
+
+    <!-- list of todo app -->
+    <div class="list-container">
+        <ul>
+            <% for(let task of todoList) { %>
+                <li>
+                    <div class="list-item-container">
+                        <div class="list-item-left">
+                            <input type="checkbox" class="checkbox-input">
+                            <div>
+                                <label class="checkbox-label">
+                                    <h3><%=  task.discription %></h3>
+                                </label>
+                                <h5><i class="fa-solid fa-calendar-days"></i> <%= task.due_date %></h5>
+                            </div>
+                        </div>
+                        <div class="list-item-right">
+                            <div>
+                                <h3 style="text-transform:capitalize;"><%= task.category %></h3>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </div>
 
 </body>
 </html>
