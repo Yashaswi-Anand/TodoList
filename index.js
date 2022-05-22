@@ -3,6 +3,10 @@ const { join } = require('path');
 const port = 8000;
 const app = express();
 
+
+//  add to mongoDB
+const db = require('./config/mongoose');
+
 // add static files like css, javascript
 app.use(express.static('assets'));
 
