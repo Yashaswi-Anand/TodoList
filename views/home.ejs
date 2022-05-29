@@ -10,7 +10,7 @@
     
 </head>
 <body>
-    <h1 id="heading"> Todo App</h1>
+    <h1 id="heading"><i class="fa-solid fa-clipboard-list"></i> Todo App</h1>
     <hr>
     <form action="/create-task" method="post">
         <div class="discription-container">
@@ -20,8 +20,8 @@
         <hr>
     
         <div class="flex-container">
-            <div class="div-left">
-                <label for="category">CATEGORY</label> <br>
+            <div class="category-container">
+                <label for="category" class="fontSize">CATEGORY</label> <br>
                 <div class="dropdown-container">
                     <!-- dropdown menu -->
                     <select name="category" id="dropdown-category">
@@ -34,8 +34,8 @@
                     </select>
                 </div>
             </div>
-            <div class="div-right">
-                <label for="due_date">DUE DATE</label> <br>
+            <div class="due-date-container">
+                <label for="due_date" class="fontSize">DUE DATE</label> <br>
                 <input type="date" id="due_date" name="due_date">
             </div>
         </div>
@@ -86,6 +86,7 @@
             </ul>
         </div>
     </form>
-
+    <!-- add javascript file -->
+    <script src="JS/todo.js"></script>
 </body>
 </html>

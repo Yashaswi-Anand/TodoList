@@ -5,12 +5,12 @@ const todoTask = require('../models/todo_list_model');
 
 // Different colors for different categories
 let categoriesColors = {
-    personal : 'darkgreen',
-    work : 'darkmagenta',
+    personal : 'darkviolet',
+    work : 'tomato',
     school : 'darkorange',
-    cleaning : 'darkblue',
-    other : 'darkcyan',
-    'na' : 'grey',
+    cleaning : 'limegreen',
+    other : 'darkblue',
+    'na' : 'black',
 }
 
 // controller function for route '/'
