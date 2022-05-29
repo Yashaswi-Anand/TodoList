@@ -12,10 +12,10 @@
 <body>
     <h1 id="heading"> Todo App</h1>
     <hr>
-    <form action="/todo-_list" method="post">
+    <form action="/create-task" method="post">
         <div class="discription-container">
             <h5 class="upper-case">Discription</h5>
-            <textarea name="discription" id="discription-textarea" placeholder="what do you need to do?"></textarea>
+            <textarea name="discription" id="discription-textarea" placeholder="what do you need to do?" required></textarea>
         </div>
         <hr>
     
@@ -25,7 +25,7 @@
                 <div class="dropdown-container">
                     <!-- dropdown menu -->
                     <select name="category" id="dropdown-category">
-                        <option value="">Select category</option>
+                        <option value="na">Select category</option>
                         <option value="personal">Personal</option>
                         <option value="work">Work</option>
                         <option value="school">School</option>
@@ -47,7 +47,7 @@
                 <i class="fas fa-plus"></i>  &nbsp; &nbsp; ADD TASK
             </button>
             <!-- delete button -->
-            <button id="delete-btn">
+            <button id="delete-btn" type="submit" form="tasks-list-form">
                 <i class="fas fa-trash-alt"></i>  &nbsp; &nbsp; DELETE TASK
             </button>
         </div>
@@ -58,31 +58,34 @@
     </div>
     <hr>
 
-    <!-- list of todo app -->
-    <div class="list-container">
-        <ul>
-            <% for(let task of todoList) { %>
-                <li>
-                    <div class="list-item-container">
-                        <div class="list-item-left">
-                            <input type="checkbox" class="checkbox-input">
-                            <div>
-                                <label class="checkbox-label">
-                                    <h3>&nbsp; &nbsp; <%= task.discription %></h3>
-                                </label>
-                                <h5>&nbsp; &nbsp; <i class="fa-solid fa-calendar-days"></i> &nbsp; <%= task.due_date %></h5>
+    <!-- list of todo app from database -->
+    <form action="/delete-task" method="post" id="tasks-list-form">
+        <div class="list-container">
+            <ul>
+                <% for(let task of todoList) { %>
+                    <li>
+                        <div class="list-item-container">
+                            <div class="list-item-left">
+                                <input id="check" type="checkbox" name="id" value=" <%=task._id %>" class="checkbox-input">
+                                <div>
+                                    <label class="checkbox-label">
+                                        <h3>&nbsp; &nbsp; <%= task.discription %></h3>
+                                    </label>
+                                    <h5>&nbsp; &nbsp; <i class="fa-solid fa-calendar-days"></i> &nbsp; <%= task.due_date %></h5>
+                                </div>
+                            </div>
+                            <div >
+                                <!-- <div>
+                                    <h3 style="text-transform:capitalize; color: <%= colors[task.category] %> ;"><%= task.category %></h3>
+                                </div> -->
+                                <button type="button" class="list-item-right" style="background-color: <%= colors[task.category] %>;"> <%= task.category %> </button>
                             </div>
                         </div>
-                        <div class="list-item-right">
-                            <div>
-                                <h3 style="text-transform:capitalize;"><%= task.category %></h3>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            <% } %>
-        </ul>
-    </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </form>
 
 </body>
 </html>

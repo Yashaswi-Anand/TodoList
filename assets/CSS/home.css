@@ -126,8 +126,11 @@ body{
 }
 
 .list-item-right{
-    padding: 0px 10px;
-    background-color:royalblue;
-    color: aliceblue;
-    border-radius: 15%;
+    text-transform:capitalize; 
+    padding: 20px 30px; 
+    border: none; 
+    border-radius: 20px; 
+    font-size: 20px; 
+    font-weight: bold;
+    color: antiquewhite;
 }
