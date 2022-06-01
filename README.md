@@ -37,6 +37,10 @@
 
 <h5> Mobile View: </h5>
 
-<img src="./screenshots/todolist_mobile.png"  style="display:inline-block"/>
+<div>
+    <img src="./screenshots/todolist_mobile.png"  style="display:inline-block"/>
+    <img src="./screenshots/todolist_mobile_2.png"  style="display:inline-block"/>
+</div>
+
 
 
